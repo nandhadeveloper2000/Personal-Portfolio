@@ -4,6 +4,7 @@ import SkillsSection from "./components/SkillsSection";
 import ExperienceSection from "./components/ExperienceSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
+import ResumeCTA from "./components/ResumeCTA";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <AboutSection />
       <SkillsSection />
       <ExperienceSection />
+      <ResumeCTA />
       <ProjectsSection />
       <ContactSection />
     </main>
