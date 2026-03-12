@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
   FaArrowRight,
   FaReact,
 } from "react-icons/fa";
@@ -18,6 +15,7 @@ import {
 
 import { personalInfo } from "../data/portfolio";
 import HeroParticles from "./HeroParticles";
+import { FiEye } from "react-icons/fi";
 
 export default function Hero() {
   return (
@@ -57,44 +55,23 @@ export default function Hero() {
               <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
 
+
             <Link
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center justify-center gap-2 rounded-2xl border border-white/12 bg-white/5 px-5 py-3 font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/8"
+            >
+              <FiEye className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+              View Resume
+            </Link>
+                        <Link
               href="#contact"
               className="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-6 py-3.5 font-semibold text-white backdrop-blur-md transition duration-300 hover:bg-white/10"
             >
               Contact Me
             </Link>
           </div>
-
-          <div className="mt-8 flex gap-4">
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition duration-300 hover:-translate-y-1 hover:bg-white/10"
-            >
-              <FaGithub size={18} />
-            </a>
-
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition duration-300 hover:-translate-y-1 hover:bg-white/10"
-            >
-              <FaLinkedin size={18} />
-            </a>
-
-            <a
-              href={`mailto:${personalInfo.email}`}
-              aria-label="Email"
-              className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition duration-300 hover:-translate-y-1 hover:bg-white/10"
-            >
-              <FaEnvelope size={18} />
-            </a>
-          </div>
-
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
               <p className="text-sm text-slate-400">Experience</p>

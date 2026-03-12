@@ -5,6 +5,8 @@ import ExperienceSection from "./components/ExperienceSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
 import ResumeCTA from "./components/ResumeCTA";
+import LuxuryFloatingContactBar from "./components/LuxuryFloatingContactBar";
+import DeveloperPhilosophySection from "./components/DeveloperPhilosophySection";
 
 export default function HomePage() {
   return (
@@ -13,9 +15,11 @@ export default function HomePage() {
       <AboutSection />
       <SkillsSection />
       <ExperienceSection />
-      <ResumeCTA />
+      <DeveloperPhilosophySection />
       <ProjectsSection />
+      <ResumeCTA />
       <ContactSection />
+      <LuxuryFloatingContactBar />
     </main>
   );
 }

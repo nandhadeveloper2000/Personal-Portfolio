@@ -7,9 +7,79 @@ import SocialSidebar from "./components/SocialSidebar";
 import CursorGlow from "./components/CursorGlow";
 
 export const metadata: Metadata = {
-  title: "Nandhakumar S | MERN Stack & React Native Developer",
+  metadataBase: new URL("https://yourdomain.com"),
+  title: {
+    default: "Nandhakumar S | MERN Stack & React Native Developer",
+    template: "%s | Nandhakumar S",
+  },
   description:
-    "Professional portfolio of Nandhakumar S, a MERN Stack and React Native Developer building modern web and mobile applications.",
+    "Official portfolio of Nandhakumar S, a MERN Stack and React Native Developer specializing in scalable full-stack web and mobile applications using React.js, Next.js, Node.js, Express.js, MongoDB, TypeScript, Tailwind CSS, and React Native.",
+  keywords: [
+    "Nandhakumar S",
+    "MERN Stack Developer",
+    "React Native Developer",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "React.js Developer",
+    "Node.js Developer",
+    "MongoDB Developer",
+    "TypeScript Developer",
+    "Portfolio Website",
+    "Chennai Developer",
+  ],
+  authors: [{ name: "Nandhakumar S" }],
+  creator: "Nandhakumar S",
+  publisher: "Nandhakumar S",
+  applicationName: "Nandhakumar Portfolio",
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Nandhakumar S | MERN Stack & React Native Developer",
+    description:
+      "Explore the professional portfolio of Nandhakumar S, showcasing full-stack web and mobile projects built with MERN stack, Next.js, TypeScript, Tailwind CSS, and React Native.",
+    url: "https://yourdomain.com",
+    siteName: "Nandhakumar Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Nandhakumar S Portfolio Preview",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Nandhakumar S | MERN Stack & React Native Developer",
+    description:
+      "Professional portfolio of Nandhakumar S featuring modern web and mobile application projects.",
+    images: ["/og-image.png"],
+    creator: "@yourtwitterhandle",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

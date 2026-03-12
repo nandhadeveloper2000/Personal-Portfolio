@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
   HiOutlineMenuAlt3,
@@ -68,9 +69,7 @@ function MagneticNavLink({
       onMouseMove={handleMouseMove}
       onMouseLeave={resetMagnetic}
       className={`group relative inline-flex items-center justify-center overflow-hidden rounded-2xl px-4 py-2.5 text-sm font-medium transition-all duration-300 ${
-        active
-          ? "text-white"
-          : "text-slate-300 hover:text-white"
+        active ? "text-white" : "text-slate-300 hover:text-white"
       }`}
       style={{
         transform: `translate3d(${magnetic.x}px, ${magnetic.y}px, 0)`,
@@ -174,12 +173,10 @@ export default function Navbar() {
                   : "border-white/10 bg-slate-950/56 shadow-[0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-xl"
               }`}
             >
-              {/* Animated gradient border */}
               <div className="pointer-events-none absolute inset-0 rounded-[30px] p-px">
                 <div className="absolute inset-0 rounded-[30px] bg-[conic-gradient(from_180deg_at_50%_50%,rgba(99,102,241,0.45),rgba(168,85,247,0.45),rgba(217,70,239,0.45),rgba(59,130,246,0.35),rgba(99,102,241,0.45))] opacity-70 blur-[2px] animate-[spin_8s_linear_infinite]" />
               </div>
 
-              {/* Floating glass layers */}
               <div className="pointer-events-none absolute inset-px rounded-[29px] bg-slate-950/80" />
               <div className="pointer-events-none absolute inset-px rounded-[29px] bg-[radial-gradient(circle_at_left_top,rgba(99,102,241,0.16),transparent_24%),radial-gradient(circle_at_center,rgba(168,85,247,0.08),transparent_30%),radial-gradient(circle_at_right,rgba(217,70,239,0.14),transparent_22%)]" />
               <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/60 to-transparent" />
@@ -187,7 +184,6 @@ export default function Navbar() {
               <div className="pointer-events-none absolute right-0 top-2 h-24 w-28 rounded-full bg-fuchsia-500/10 blur-3xl" />
               <div className="pointer-events-none absolute bottom-0 left-1/3 h-20 w-32 rounded-full bg-violet-500/10 blur-3xl" />
 
-              {/* Scroll progress bar */}
               <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-0.75 overflow-hidden rounded-t-[30px]">
                 <div className="absolute inset-0 bg-white/5" />
                 <div
@@ -202,16 +198,23 @@ export default function Navbar() {
                   href="#home"
                   className="group/brand flex min-w-0 items-center gap-3"
                 >
-                  <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-indigo-500 via-violet-500 to-fuchsia-500 text-sm font-bold text-white shadow-[0_12px_35px_rgba(139,92,246,0.35)] transition-all duration-300 group-hover/brand:scale-105 group-hover/brand:shadow-[0_16px_45px_rgba(168,85,247,0.45)]">
+                  <div className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_10px_30px_rgba(139,92,246,0.18)] transition-all duration-300 group-hover/brand:scale-105 group-hover/brand:shadow-[0_16px_45px_rgba(168,85,247,0.24)] sm:h-12 sm:w-12">
                     <span className="absolute inset-0 rounded-2xl bg-white/10 blur-md" />
-                    <span className="relative">NS</span>
+                    <Image
+                      src="/logo.png"
+                      alt="Nandhakumar Logo"
+                      width={45}
+                      height={45}
+                      priority
+                      className="relative z-10 h-auto w-auto object-contain"
+                    />
                   </div>
 
                   <div className="min-w-0 leading-tight">
                     <p className="truncate text-sm font-semibold text-white sm:text-[15px]">
                       {personalInfo.name}
                     </p>
-                    <p className="truncate text-xs text-slate-400">
+                    <p className="truncate text-[11px] text-slate-400 sm:text-xs">
                       {personalInfo.title}
                     </p>
                   </div>
@@ -254,18 +257,13 @@ export default function Navbar() {
                   type="button"
                   onClick={() => setOpen((prev) => !prev)}
                   aria-label="Toggle navigation menu"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition duration-300 hover:bg-white/10 md:hidden"
+                  className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition duration-300 hover:bg-white/10 md:hidden"
                 >
-                  {open ? (
-                    <HiOutlineX size={22} />
-                  ) : (
-                    <HiOutlineMenuAlt3 size={22} />
-                  )}
+                  {open ? <HiOutlineX size={22} /> : <HiOutlineMenuAlt3 size={22} />}
                 </button>
               </div>
             </div>
 
-            {/* Floating shadow */}
             <div className="pointer-events-none absolute inset-x-10 -bottom-4 h-10 rounded-full bg-violet-500/10 blur-3xl" />
           </div>
 
@@ -276,11 +274,17 @@ export default function Navbar() {
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.10),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(217,70,239,0.10),transparent_24%)]" />
 
                 <div className="relative p-4">
-                  <div className="mb-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+                  {/* <div className="mb-4 rounded-2xl border border-white/10 bg-white/5 p-4">
                     <div className="mb-4 flex items-center gap-3">
-                      <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-indigo-500 via-violet-500 to-fuchsia-500 text-sm font-bold text-white shadow-[0_10px_30px_rgba(139,92,246,0.35)]">
+                      <div className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_10px_30px_rgba(139,92,246,0.20)]">
                         <span className="absolute inset-0 rounded-2xl bg-white/10 blur-md" />
-                        <span className="relative">NS</span>
+                        <Image
+                          src="/logo.png"
+                          alt="Nandhakumar Logo"
+                          width={40}
+                          height={40}
+                          className="relative z-10 object-contain"
+                        />
                       </div>
 
                       <div className="min-w-0">
@@ -300,7 +304,7 @@ export default function Navbar() {
                       </span>
                       <span>Available for work</span>
                     </div>
-                  </div>
+                  </div> */}
 
                   <nav className="flex flex-col gap-1">
                     {navLinks.map((item) => {
@@ -338,7 +342,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      <div className="h-25 sm:h-27 md:h-28" />
+      <div className="h-24 sm:h-24 md:h-28" />
     </>
   );
 }

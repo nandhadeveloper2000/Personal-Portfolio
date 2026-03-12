@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import {
-  FiArrowUp,
   FiGithub,
   FiLinkedin,
   FiMail,
@@ -12,24 +10,6 @@ import {
 import { personalInfo } from "../data/portfolio";
 
 export default function Footer() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   const contactLinks = [
     {
@@ -105,21 +85,7 @@ export default function Footer() {
               );
             })}
 
-            <button
-              type="button"
-              onClick={scrollToTop}
-              aria-label="Scroll to top"
-              className={`group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-medium text-slate-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 hover:text-white hover:shadow-[0_10px_30px_rgba(168,85,247,0.22)] ${
-                showScrollTop
-                  ? "translate-y-0 opacity-100"
-                  : "pointer-events-none translate-y-2 opacity-0 lg:pointer-events-auto lg:translate-y-0 lg:opacity-100"
-              }`}
-            >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 transition duration-300 group-hover:scale-110 group-hover:border-fuchsia-400/30 group-hover:bg-fuchsia-500/10">
-                <FiArrowUp className="h-4 w-4" />
-              </span>
-              <span>Top</span>
-            </button>
+           
           </div>
         </div>
       </div>

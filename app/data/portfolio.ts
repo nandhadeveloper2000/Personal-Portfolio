@@ -24,7 +24,6 @@ export type Project = {
   live: string;
   github: string;
 };
-
 export const personalInfo: PersonalInfo = {
   name: "Nandhakumar S",
   title: "MERN Stack & React Native Developer",
@@ -34,11 +33,13 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/nandhadeveloper2000",
   linkedin: "https://linkedin.com/in/snandhakumar-dev",
   shortBio:
-    "MERN Stack Developer with experience building full-stack web and mobile applications using React, Next.js, Node.js, MongoDB, and React Native. Passionate about creating scalable backend systems and premium user interfaces.",
-  longBio:
-    "I am a MERN Stack and React Native developer with 1.5+ years of experience building full-stack web and mobile applications. I have worked on real-world platforms such as LMS systems, movie ticket booking apps, service booking platforms, commerce dashboards, and role-based business applications. My expertise includes building responsive UI using React, Next.js, Tailwind CSS, React Native, and developing scalable backend systems with Node.js, Express.js, and MongoDB. I enjoy transforming ideas into polished digital products with clean architecture and modern design.",
-};
+    "MERN Stack & React Native Developer specializing in building modern full-stack web and mobile applications using React, Next.js, Node.js, Express.js, MongoDB, and React Native. Focused on creating scalable backend systems, high-performance applications, and premium user interfaces.",
+  longBio: `I am a MERN Stack and React Native Developer with 1.5+ years of experience building full-stack web and mobile applications. I specialize in developing scalable backend systems and modern user interfaces using technologies such as React, Next.js, Node.js, Express.js, MongoDB, Tailwind CSS, and React Native.
 
+I have worked on multiple real-world platforms including LMS systems, movie ticket booking applications, bike and scooter service booking platforms, commerce dashboards, and role-based business management systems.
+
+My focus is on writing clean, maintainable code, designing responsive interfaces, and building reliable APIs that power modern digital products. I enjoy transforming ideas into polished, user-friendly applications with strong architecture, performance, and modern UI/UX.`,
+};
 export const skills: string[] = [
   "HTML5",
   "CSS3",
@@ -141,4 +142,43 @@ export const projects: Project[] = [
     live: "",
     github: "https://github.com/yourusername/react-native-business-app",
   },
+];
+
+export type Education = {
+  degree: string;
+  cgpa: string;
+  period: string;
+  institution: string;
+  location: string;
+};
+
+export const educationList: Education[] = [
+  {
+    degree: "Master of Computer Application (MCA)",
+    cgpa: "8.40",
+    period: "June 2020 - April 2022",
+    institution: "Annai College of Arts and Science",
+    location: "Kumbakonam - 612 503",
+  },
+  {
+    degree: "Bachelor of Computer Application (BCA)",
+    cgpa: "7.10",
+    period: "June 2017 - April 2020",
+    institution: "Annai College of Arts and Science",
+    location: "Kumbakonam - 612 503",
+  },
+  // {
+  //   degree: "HSC",
+  //   cgpa: "5.85",
+  //   period: "June 2016 - April 2017",
+  //   institution: "P.R.G.Hr.Sec.School",
+  //   location: "Kattumannarkoil - 608 301",
+  // },
+  // {
+  //   degree: "SSLC",
+  //   cgpa: "7.16",
+  //   period: "June 2015 - April 2016",
+  //   institution: "P.R.G.Hr.Sec.School",
+  //   location: "Kattumannarkoil - 608 301",
+  // },
 ];
